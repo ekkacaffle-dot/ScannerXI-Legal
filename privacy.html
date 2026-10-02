@@ -175,32 +175,81 @@
             Caffle Scanner can read QR codes and barcodes using your camera or
             images you select. Decoding happens on your device. If a QR code
             contains a link and you choose to open it, the destination website
-            handles your visit under its own privacy practices. Product barcode
-            lookup is described in the next section.
+            handles your visit under its own privacy practices. QR codes are not
+            looked up online. Product barcode lookup is described in the next
+            section.
           </p>
         </section>
 
         <section id="open-food-facts">
           <h2>8. Open Food Facts</h2>
           <p>
-            When you scan a product barcode and use product lookup, Caffle
-            Scanner may contact
+            When Caffle Scanner reads a supported retail product barcode (such as
+            a UPC, EAN, or GTIN code), it automatically looks up the product in
             <a href="https://world.openfoodfacts.org/privacy" rel="noopener">Open Food Facts</a>,
-            an independent product database, over an encrypted HTTPS connection
-            to find information about that product.
+            an independent product database, over an encrypted HTTPS connection.
+            You do not need to tap anything for the lookup to start. QR codes and
+            other kinds of barcodes are not looked up.
           </p>
+          <h3>What is sent</h3>
           <ul>
-            <li>The barcode value, such as the product number, is sent to Open Food Facts to perform the lookup.</li>
             <li>
-              As with any internet request, standard connection information,
-              such as your IP address, device or network details, and the time
-              of the request, may be visible to Open Food Facts.
+              <strong>The barcode number.</strong> The same product can be
+              printed with different but equivalent barcode formats, so
+              Caffle Scanner may send several equivalent forms of the scanned
+              number, one after another, until a match is found.
             </li>
-            <li>Caffle Scanner does not send your documents or scans as part of this lookup.</li>
+            <li>
+              <strong>An app identifier.</strong> As Open Food Facts asks, each
+              request names the app and its version (for example,
+              “CaffleScanner/1.0”).
+            </li>
+            <li>
+              <strong>Standard connection information.</strong> As with any
+              internet request, your IP address, the time of the request, and
+              standard web request information are visible to Open Food Facts.
+            </li>
+            <li>
+              <strong>Product image request.</strong> If a product is found and
+              has a photo, Caffle Scanner loads that image directly from Open Food
+              Facts, which is a separate request to Open Food Facts' servers.
+            </li>
           </ul>
           <p>
-            Open Food Facts is operated independently of Caffle Scanner, and its
-            own privacy policy applies to information it receives.
+            Caffle Scanner does not send your documents, scans, name, account,
+            device identifiers, or location as part of these requests, and uses
+            no cookies for them.
+          </p>
+          <h3>Server logs at Open Food Facts</h3>
+          <p>
+            Like most websites, Open Food Facts keeps server logs. These ordinarily
+            record the requested address (which contains the barcode number)
+            together with the IP address, time, and app identifier of the request.
+            Open Food Facts' privacy policy states that it keeps visitor IP
+            addresses and logs for up to three years for security, technical
+            analysis, and popularity measurement, and that it does not share
+            personal data with third parties for commercial purposes. Open Food
+            Facts is operated independently of Caffle Scanner, and its own
+            privacy policy applies to the information it receives.
+          </p>
+          <h3>Results kept on your device</h3>
+          <p>
+            To avoid repeating lookups, Caffle Scanner keeps a small cache of
+            recent lookup results on your device. It holds the product details
+            that Open Food Facts returned, such as name, brand, size, and image
+            address, for up to 7 days, and “not found” results for up to 24
+            hours. It holds at most 64 entries, does not include scans or images
+            of your documents, and is never sent to us. iOS may also clear this
+            cache at any time.
+          </p>
+          <h3>Search Web</h3>
+          <p>
+            If Open Food Facts has no entry for a product, Caffle Scanner offers a
+            <strong>Search Web</strong> button. Nothing is searched unless you tap
+            it. If you do, your default browser opens a Google search for the
+            barcode number (for example, “UPC 012345678905 product”). That search
+            is handled by your browser and Google under their own privacy
+            policies.
           </p>
         </section>
 
@@ -220,15 +269,16 @@
         <section id="purchases">
           <h2>10. Purchases</h2>
           <p>
-            In-app purchases and subscriptions, if offered, are processed by
-            Apple through the App Store using StoreKit. Caffle Scanner does not
-            receive your full payment card information. The app receives purchase
-            and entitlement information from Apple so that it can unlock the
-            features you have paid for.
+            Caffle Scanner offers Scanner Pro as a one-time, lifetime in-app
+            purchase. It is not a subscription. Purchases are processed by Apple
+            through the App Store using StoreKit. Caffle Scanner does not receive
+            your payment card information or your Apple Account details.
           </p>
           <p>
-            You can manage or cancel subscriptions in your Apple Account
-            settings on your device.
+            To unlock Pro features, the app checks Apple's verified purchase
+            record on your device. Caffle Scanner does not send purchase
+            information to us or to any other party. You can restore a previous
+            purchase at any time using Restore Purchase in the app.
           </p>
         </section>
 
@@ -274,9 +324,11 @@
             Deleting Caffle Scanner removes the data stored in the app's local
             container. Keychain items, such as your App Lock PIN hash, may
             remain on your device after the app is deleted, as is standard iOS
-            Keychain behavior. Information you have sent to third parties, such
-            as a barcode lookup to Open Food Facts or a document you shared, is
-            retained under those parties' policies.
+            Keychain behavior. The on-device product lookup cache keeps results
+            for up to 7 days (24 hours for “not found”) and is removed with the
+            app. Information you have sent to third parties, such as a barcode
+            lookup to Open Food Facts or a document you shared, is retained
+            under those parties' policies (see section 8).
           </p>
         </section>
 
