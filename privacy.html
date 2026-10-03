@@ -183,71 +183,48 @@
         <section id="open-food-facts">
           <h2>8. Open Food Facts</h2>
           <p>
-            When ScannerXI reads a supported retail product barcode (such as
-            a UPC, EAN, or GTIN code), it automatically looks up the product in
-            <a href="https://world.openfoodfacts.org/privacy" rel="noopener">Open Food Facts</a>,
-            an independent product database, over an encrypted HTTPS connection.
-            You do not need to tap anything for the lookup to start. QR codes and
-            other kinds of barcodes are not looked up.
+            When ScannerXI scans a supported retail product barcode, such as a
+            UPC, EAN, or GTIN code, it may automatically check Open Food Facts,
+            an independent product database, to find product information.
+          </p>
+          <p>
+            The lookup happens over an encrypted HTTPS connection and the result
+            is shown inside ScannerXI. ScannerXI does not automatically open the
+            Open Food Facts website. The website opens only if you choose to tap
+            an Open Food Facts link.
+          </p>
+          <p>
+            QR codes and unsupported barcode types are not sent to Open Food Facts.
           </p>
           <h3>What is sent</h3>
           <ul>
             <li>
-              <strong>The barcode number.</strong> The same product can be
-              printed with different but equivalent barcode formats, so
-              ScannerXI may send several equivalent forms of the scanned
-              number, one after another, until a match is found.
+              <strong>Barcode number:</strong> The scanned product barcode is
+              sent to Open Food Facts to search for a matching product.
             </li>
             <li>
-              <strong>An app identifier.</strong> As Open Food Facts asks, each
-              request names the app and its version.
+              <strong>App information:</strong> The request may include
+              ScannerXI's name and app version.
             </li>
             <li>
-              <strong>Standard connection information.</strong> As with any
-              internet request, your IP address, the time of the request, and
-              standard web request information are visible to Open Food Facts.
+              <strong>Standard network information:</strong> Open Food Facts may
+              receive information normally associated with an internet request,
+              such as your IP address, request time, and basic request information.
             </li>
             <li>
-              <strong>Product image request.</strong> If a product is found and
-              has a photo, ScannerXI loads that image directly from Open Food
-              Facts, which is a separate request to Open Food Facts' servers.
+              <strong>Product images:</strong> If a matching product has an image,
+              ScannerXI may load that image from Open Food Facts.
             </li>
           </ul>
           <p>
-            ScannerXI does not send your documents, scans, name, account,
-            device identifiers, or location as part of these requests, and uses
-            no cookies for them.
+            ScannerXI does not send your documents, scanned pages, name, account
+            information, precise location, or other personal files as part of
+            this lookup.
           </p>
-          <h3>Server logs at Open Food Facts</h3>
           <p>
-            Like most websites, Open Food Facts keeps server logs. These ordinarily
-            record the requested address (which contains the barcode number)
-            together with the IP address, time, and app identifier of the request.
-            Open Food Facts' privacy policy states that it keeps visitor IP
-            addresses and logs for up to three years for security, technical
-            analysis, and popularity measurement, and that it does not share
-            personal data with third parties for commercial purposes. Open Food
-            Facts is operated independently of ScannerXI, and its own
-            privacy policy applies to the information it receives.
-          </p>
-          <h3>Results kept on your device</h3>
-          <p>
-            To avoid repeating lookups, ScannerXI keeps a small cache of
-            recent lookup results on your device. It holds the product details
-            that Open Food Facts returned, such as name, brand, size, and image
-            address, for up to 7 days, and “not found” results for up to 24
-            hours. It holds at most 64 entries, does not include scans or images
-            of your documents, and is never sent to us. iOS may also clear this
-            cache at any time.
-          </p>
-          <h3>Search Web</h3>
-          <p>
-            If Open Food Facts has no entry for a product, ScannerXI offers a
-            <strong>Search Web</strong> button. Nothing is searched unless you tap
-            it. If you do, your default browser opens a Google search for the
-            barcode number (for example, “UPC 012345678905 product”). That search
-            is handled by your browser and Google under their own privacy
-            policies.
+            For more information about how Open Food Facts handles data, you can
+            view the
+            <a href="https://world.openfoodfacts.org/privacy" rel="noopener">Open Food Facts Privacy Policy</a>.
           </p>
         </section>
 
