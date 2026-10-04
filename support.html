@@ -55,6 +55,13 @@
 
       <div class="faq">
         <details>
+          <summary>Is ScannerXI completely free?</summary>
+          <div class="faq-body">
+            <p>Yes. ScannerXI is free to download and use. All current features are available without an in-app purchase or a subscription.</p>
+          </div>
+        </details>
+
+        <details>
           <summary>How do I scan a document?</summary>
           <div class="faq-body">
             <p>
@@ -121,8 +128,9 @@
               App Lock protects ScannerXI with Face ID and a PIN. Face ID is
               handled by Apple. ScannerXI only learns whether authentication
               succeeded and never receives your biometric data. Your PIN is not
-              stored in plain text. It is verified using a salted hash kept in the
-              Apple Keychain on your device.
+              stored in plain text. It is verified using a value derived with
+              PBKDF2-HMAC-SHA256 and a random salt, kept in the Apple Keychain
+              on your device.
             </p>
             <p>
               If Face ID isn't offered, check that Face ID is set up on your
@@ -190,6 +198,32 @@
               the document, remove the password with the app or tool that created
               it, if you are authorized to do so, and then import it again.
             </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I convert a PDF to Excel?</summary>
+          <div class="faq-body">
+            <p>Open <strong>Tools › PDF to Excel</strong> and choose a PDF from ScannerXI Files or the iOS Files app. ScannerXI analyzes the PDF on your device and looks for structured tables. Review the table preview, then tap <strong>Export Excel</strong>.</p>
+            <p>The Excel workbook (.xlsx) is saved to <strong>ScannerXI Files</strong> using your selected storage setting. Tap <strong>View File</strong>, then <strong>Open File</strong> to preview it, or <strong>Share</strong> to send it to another app. You can also find it later in ScannerXI’s Files tab.</p>
+            <p>Conversion works best with clear, structured tables. Some PDFs may show “No table detected,” and password-protected PDFs must be unlocked in another tool before conversion. Check numbers, text, and columns against the original before using the spreadsheet. The original PDF is not changed.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What happens if I forget my App Lock PIN?</summary>
+          <div class="faq-body">
+            <p>On the App Lock screen, tap <strong>Forgot PIN?</strong> and complete the iOS authentication prompt using your device passcode or an available authentication method. Then create and confirm a new 6-digit ScannerXI PIN.</p>
+            <p>Resetting your PIN this way does not delete your saved documents, and App Lock stays enabled. We cannot retrieve your old PIN or bypass device authentication for you. Avoid deleting the app to reset your PIN, because deleting the app removes documents stored in its local container.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I delete or recover a document?</summary>
+          <div class="faq-body">
+            <p>Choose <strong>Delete</strong> from a document’s actions to move it to Trash. To recover it, open <strong>Settings › Trash</strong>, tap the document, and choose <strong>Restore</strong>. The restored document returns to your files.</p>
+            <p>To remove a document permanently, select it in Trash, choose <strong>Delete Permanently</strong>, and confirm. Permanent deletion cannot be undone in ScannerXI. If an iCloud document is still downloading, wait for the download to finish before restoring it.</p>
+            <p>Deleting a document in ScannerXI does not automatically delete copies you previously exported to Photos, Files, another app, or another person. Those copies must be deleted separately.</p>
           </div>
         </details>
 
