@@ -39,7 +39,7 @@
       <header class="page-header">
         <div class="eyebrow">Legal</div>
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: <time datetime="2026-10-03">October 3, 2026</time></p>
+        <p class="updated">Last updated: <time datetime="2026-10-04">October 4, 2026</time></p>
       </header>
 
       <nav class="toc" aria-label="Privacy Policy sections">
@@ -158,13 +158,14 @@
             </li>
             <li>
               <strong>PIN:</strong> your App Lock PIN is not stored in plain
-              text. To verify your PIN, ScannerXI stores a salted SHA-256
-              hash in the Apple Keychain on your device. The Keychain item is
-              protected by your device's iOS security.
+              text. ScannerXI derives a protected value from your PIN using
+              PBKDF2-HMAC-SHA256 with a randomly generated salt and stores the
+              derived value in the Apple Keychain on your device. The Keychain
+              item is protected by iOS security.
             </li>
           </ul>
           <p>
-            Your PIN and its hash are not sent to us.
+            Your PIN and the stored derived value are not sent to us.
           </p>
         </section>
 
@@ -274,14 +275,17 @@
           <h2>12. Data Retention</h2>
           <p>
             Because your documents are stored on your device or in a location you
-            choose, you decide how long they are kept. Deleting a document in the
-            app, or deleting it from iCloud Drive or another storage location,
-            removes it from that location. This is subject to that location's own
-            behavior, such as a “Recently Deleted” folder or backups.
+            choose, you decide how long they are kept. Deleting a document from
+            ScannerXI removes the copy managed by ScannerXI, subject to the
+            storage location's behavior, such as a “Recently Deleted” folder or
+            backups. Copies previously exported to Files, iCloud Drive, Photos,
+            another app, or another recipient are not automatically deleted.
+            You must delete those copies separately from their respective
+            locations.
           </p>
           <p>
             Deleting ScannerXI removes the data stored in the app's local
-            container. Keychain items, such as your App Lock PIN hash, may
+            container. Keychain items, such as the value derived from your App Lock PIN, may
             remain on your device after the app is deleted, as is standard iOS
             Keychain behavior. The on-device product lookup cache keeps results
             for up to 7 days (24 hours for “not found”) and is removed with the
